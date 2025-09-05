@@ -1,202 +1,167 @@
-🗃️ Suite de Utilidades de Organización y Mantenimiento
-Esta colección de scripts Python te ayuda a organizar archivos multimedia, limpiar espacio y monitorear la salud de tu sistema.
+# 🗃️ PROYECTOS.PY - Suite Organizadora de Archivos
 
-📋 Scripts Disponibles
-1. 🖼️ renombrar_imagenes.py
-Organiza imágenes en carpetas por año según su fecha de modificación.
+[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-brightgreen.svg)](https://github.com/tu-usuario/PROYECTOS.PY)
 
-Formatos soportados: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp
+Una colección de scripts Python para organizar automáticamente archivos multimedia, limpiar espacio y monitorear tu sistema.
 
-2. 🎥 organizar_videos.py
-Organiza videos en carpetas por año según su fecha de modificación.
+## ✨ Características
 
-Formatos soportados: .mp4, .mov, .avi, .wmv, .flv, .webm, .mkv, .m4v, .mpg, .mpeg, .3gp, .3g2, .mts, .m2ts, .vob, .ogv, .divx, .f4v, .m4p
+- 🖼️ **Organizador de Imágenes**: Clasifica por fecha de modificación
+- 🎥 **Organizador de Videos**: Organiza por año con información de tamaño
+- 📁 **Clasificador por Tipo**: Organiza documentos, música, archivos, etc.
+- 🧹 **Limpieza Inteligente**: Elimina archivos temporales con seguridad
+- 📊 **Monitor de Sistema**: Alertas de uso de CPU, memoria y disco
+- ⚡ **Rápido y Eficiente**: Procesamiento optimizado
+- 🛡️ **Seguro**: Modo simulación y confirmaciones interactivas
 
-3. 📁 file_organizer.py
-Organiza archivos por tipo en carpetas predefinidas.
+## 📦 Scripts Incluidos
 
-Categorías por defecto:
+| Script | Descripción | Comando |
+|--------|-------------|---------|
+| `renombrar_imagenes.py` | Organiza imágenes por fecha | `python scripts/renombrar_imagenes.py` |
+| `organizar_videos.py` | Organiza videos por año | `python scripts/organizar_videos.py` |
+| `file_organizer.py` | Clasifica archivos por tipo | `python scripts/file_organizer.py ~/Downloads` |
+| `file_cleaner.py` | Limpieza segura de archivos | `python scripts/file_cleaner.py ~/Downloads --dry-run` |
+| `system_health.py` | Monitor del sistema | `python scripts/system_health.py --interval 60` |
 
-Documents: .pdf, .doc, .docx, .odt, .rtf, .txt, .xls, .xlsx, .csv
+## 🚀 Instalación Rápida
 
-Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, .webp
-
-Videos: .mp4, .mkv, .avi, .mov, .wmv, .flv, .webm, .m4v
-
-Music: .mp3, .wav, .flac, .aac, .ogg, .wma, .m4a
-
-Archives: .zip, .rar, .7z, .tar, .gz, .bz2
-
-Scripts: .py, .js, .sh, .bat, .ps1, .rb, .pl
-
-4. 🧹 file_cleaner.py
-Limpia archivos temporales y basura según reglas configurables.
-
-Características:
-
-Patrones predefinidos: *~, *.tmp, *.temp, *.log, *.bak, *.old, Thumbs.db, .DS_Store
-
-Filtros por antigüedad y tamaño
-
-Modo dry-run y confirmación interactiva
-
-Script de restauración automático
-
-5. 📊 system_health.py
-Monitor de salud del sistema con alertas y notificaciones.
-
-Métricas monitoreadas:
-
-Uso de CPU (%)
-
-Uso de memoria RAM (%)
-
-Uso de disco (%)
-
-🚀 Instalación y Requisitos
-Prerrequisitos
-bash
-# Python 3.7 o superior
-python --version
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/PROYECTOS.PY.git
+cd PROYECTOS.PY
 
 # Instalar dependencias
+pip install -r requirements.txt
+
+# O instalar manualmente
 pip install psutil plyer colorama
-Configuración
-Clona o descarga los scripts en una carpeta
 
-Hazlos ejecutables (opcional):
-
-bash
-chmod +x *.py
-🎯 Uso de los Scripts
+💡 Uso Rápido
 Para organizar imágenes:
 bash
-# Navegar a la carpeta con imágenes
-cd /ruta/a/mis/fotos
-
-# Ejecutar el organizador
-python renombrar_imagenes.py
+cd /ruta/a/tus/fotos
+python /ruta/a/PROYECTOS.PY/scripts/renombrar_imagenes.py
 Para organizar videos:
 bash
-cd /ruta/a/mis/videos
-python organizar_videos.py
-Para organizar archivos por tipo:
-bash
-python file_organizer.py ~/Downloads
-python file_organizer.py ~/Downloads --dry-run  # Simular sin cambios
-python file_organizer.py ~/Downloads --config mi_config.json  # Config personalizada
+cd /ruta/a/tus/videos
+python /ruta/a/PROYECTOS.PY/scripts/organizar_videos.py
 Para limpiar archivos temporales:
 bash
-python file_cleaner.py ~/Downloads --days 7 --size 1024
-python file_cleaner.py ~/Downloads --dry-run  # Solo mostrar qué se borraría
-python file_cleaner.py ~/Downloads --confirm  # Confirmar cada borrado
-Para monitorear el sistema:
+# Modo simulación (recomendado primero)
+python scripts/file_cleaner.py ~/Downloads --dry-run
+
+# Limpieza real
+python scripts/file_cleaner.py ~/Downloads --days 30
+
+⚙️ Configuración
+Archivos de configuración incluidos:
+configs/config_organizer.json - Categorías y extensiones
+
+configs/config_cleaner.json - Reglas de limpieza
+
+Personalizar configuración:
 bash
-python system_health.py
-python system_health.py --interval 30 --cpu 85 --memory 90 --disk 95
-⚙️ Configuración Avanzada
-Configuración personalizada para file_organizer
-Crea un archivo JSON con tu mapeo personalizado:
+# Copiar configuraciones de ejemplo
+cp configs/config_organizer.json config_local.json
 
-json
-{
-    "Documentos": [".pdf", ".docx", ".txt"],
-    "Fotos": [".jpg", ".png", ".raw"],
-    "Videos": [".mp4", ".mov"],
-    "Audio": [".mp3", ".wav", ".flac"]
-}
-Configuración personalizada para file_cleaner
-json
-{
-    "patterns": ["*.tmp", "*.log", "*.cache"],
-    "exclude": ["important.tmp", "backup.log"],
-    "min_days": 30,
-    "max_size_kb": 5120
-}
+# Editar con tus preferencias
+nano config_local.json
+
+# Usar configuración personalizada
+python scripts/file_organizer.py ~/Downloads --config config_local.json
+
 🛡️ Características de Seguridad
-✅ Modo dry-run disponible en todos los scripts
+✅ Modo Dry-Run: Simula cambios sin afectar archivos
 
-✅ Confirmación interactiva antes de cambios destructivos
+✅ Confirmaciones Interactivas: Pregunta antes de cada acción
 
-✅ Backup automático de archivos eliminados
+✅ Backups Automáticos: Crea copias de seguridad
 
-✅ Scripts de restauración generados automáticamente
+✅ Logs Detallados: Registro de todas las operaciones
 
-✅ Logging detallado de todas las operaciones
+✅ Scripts de Restauración: Permite revertir cambios
 
-📊 Estructura de Carpetas Resultante
-Después de ejecutar los organizadores:
-
+📁 Estructura del Proyecto
 text
-📂 Directorio_principal/
-├── 📂 2023/
-│   ├── 🖼️ 20230515_143022.jpg
-│   ├── 🎥 20230620_093145.mp4
-│   └── 🎥 20231225_162301.mov
-├── 📂 2024/
-│   ├── 🖼️ 20240110_084511.png
-│   └── 🎥 20240214_201530.avi
-├── 📂 Documents/
-├── 📂 Images/
-├── 📂 Videos/
-└── 📂 Music/
+PROYECTOS.PY/
+├── 📁 scripts/           # Scripts principales
+├── 📁 configs/          # Configuraciones de ejemplo
+├── 📁 docs/            # Documentación detallada
+├── 📄 requirements.txt  # Dependencias de Python
+├── 📄 README.md        # Este archivo
+├── 📄 .gitignore       # Archivos ignorados por Git
+└── 📄 LICENSE          # Licencia MIT
+
 🐛 Solución de Problemas
-Error: "ModuleNotFoundError"
+Error: "Módulo no encontrado"
 bash
 # Instalar dependencias faltantes
 pip install psutil plyer colorama
 Error: Permisos denegados
 bash
-# Ejecutar con permisos adecuados
-chmod +x script.py
+# Dar permisos de ejecución
+chmod +x scripts/*.py
 Los archivos no se mueven
-Verificar que los archivos no estén en uso por otras aplicaciones
+Verifica que los archivos no estén en uso
 
-Comprobar que haya espacio suficiente en disco
+Comprueba que haya espacio en disco
 
-Usar el modo --dry-run primero para simular
+Usa --dry-run para diagnosticar
 
-📝 Logs y Monitoreo
-file_cleaner.py: Logs en ~/.file_cleaner.log
-
-system_health.py: Logs en ~/.system_health_monitor.log
-
-Todos los scripts muestran output en tiempo real por consola
-
-🔄 Restauración de Cambios
-Para recuperar archivos eliminados:
+🔄 Actualizar
 bash
-# Ejecutar el script de restauración generado
-./restore_1734567890.sh  # Linux/Mac
-restore_1734567890.bat   # Windows
-Para deshacer organización:
-Los scripts de organización no modifican los archivos originales, solo los mueven. Puedes:
+# Navegar al directorio del proyecto
+cd PROYECTOS.PY
 
-Usar el explorador de archivos para moverlos manualmente
+# Obtener últimas actualizaciones
+git pull origin main
 
-Usar comandos de terminal para revertir los cambios
+# Actualizar dependencias
+pip install -r requirements.txt --upgrade
 
 🤝 Contribuir
-Si encuentras errores o quieres mejorar estos scripts:
+Las contribuciones son bienvenidas:
 
-Haz fork del proyecto
+Haz Fork del proyecto
 
-Crea una rama para tu feature
+Crea una rama: git checkout -b feature/nueva-funcionalidad
 
-Commit tus cambios
+Haz commit: git commit -m 'Agregar nueva funcionalidad'
 
-Push a la rama
+Push: git push origin feature/nueva-funcionalidad
 
 Abre un Pull Request
 
+📊 Logs y Monitoreo
+~/.file_cleaner.log - Registro de limpiezas
+
+~/.system_health_monitor.log - Métricas del sistema
+
+Ver logs en tiempo real:
+
+bash
+tail -f ~/.file_cleaner.log
+
+⚠️ Advertencias Importantes
+Siempre haz backup de tus archivos importantes
+
+Prueba con --dry-run antes de ejecutar por primera vez
+
+Supervisa el proceso especialmente con archivos críticos
+
+Los cambios son permanentes - usa los scripts de restauración si es necesario
+
 📄 Licencia
-Todos los scripts están bajo licencia MIT. Puedes usarlos, modificarlos y distribuirlos libremente.
+Este proyecto está bajo la Licencia MIT. Ver LICENSE para más detalles.
 
-⚠️ Advertencias
-Siempre haz backup de tus archivos importantes antes de usar scripts de limpieza
+🆘 Soporte
+Si encuentras problemas:
 
-Prueba primero con --dry-run para ver qué cambios se realizarán
+Revisa los archivos de log
 
-Supervisa el proceso especialmente la primera vez que uses cada script
+Consulta la documentación en docs/instrucciones.md
 
-Los cambios son permanentes - una vez eliminados los archivos, solo se pueden recuperar con el script de restauración si se generó
+Abre un issue en GitHub
