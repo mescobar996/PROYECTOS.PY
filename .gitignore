@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Configuraciones locales
+config_local.json

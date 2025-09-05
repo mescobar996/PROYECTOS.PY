@@ -1,0 +1,18 @@
+{
+    "patterns": [
+        "*~", "*.tmp", "*.temp", "*.log", "*.bak", 
+        "*.old", "*.cache", "*.crdownload", "*.part",
+        "Thumbs.db", ".DS_Store", ".thumb", "desktop.ini",
+        "*.dmp", "*.stackdump", "*.minidmp"
+    ],
+    "exclude": [
+        "important.tmp", "backup.log", "system.log",
+        "config.bak", "*.important.tmp"
+    ],
+    "min_days": 7,
+    "max_size_kb": 10240,
+    "skip_folders": [
+        "System32", "Program Files", "Applications",
+        "Library", "node_modules", "venv", ".git"
+    ]
+}
